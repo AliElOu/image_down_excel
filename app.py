@@ -22,10 +22,10 @@ def perform_downloading(df, xlsx_file):
         try:
             dwd_image = functions.download_image(img)
             df.at[i, "Image"] = dwd_image
-            df.to_excel("C:\\Users\\ali_e\\OneDrive\\Bureau\\app\\Book1.xlsx", index=False)
+            df.to_excel(xlsx_file, index=False)
             print(f"{functions.date_now()} --> ✓ Image downloaded")
         except Exception as e:
-            print(f"{functions.date_now()} --> X Image non downloaded")
+            print(e)
             continue
     print(f"{functions.date_now()} --> Travail terminé")
     
